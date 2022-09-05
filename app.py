@@ -66,4 +66,4 @@ elif sb == ("spy crafts") and logged_in == ("true"):
 elif sb == ("spy dictionary") or sb == ("sd") and logged_in == ("true"):
   st.markdown("https://sites.google.com/view/poafdsgjoaj/spy-dictionary")
 elif sb == ("lesson one") or ("lesson 1") and logged_in == ("true"):
-  sb.markdown("yo")
+  st.markdown("yo")
