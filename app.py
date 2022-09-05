@@ -9,7 +9,7 @@ codename = st.text_input("what is your codename")
 password = (".")
 password_input = (" ")
 logged_in = (" ")
-
+sb = (" ")
 missons = ["you have no missons ass you are not sined in"]
 rank = (" ")
 age = (" ")
