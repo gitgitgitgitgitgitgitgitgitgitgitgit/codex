@@ -49,8 +49,8 @@ else:
 
 
 
-sb = st.text_input("............")
-if sb == ("missons"):
+sb = st.text_input("....................")
+if sb == ("missons") and logged_in == ("true"):
   st.info("here are your missons")
   st.info(missons)
 elif sb == ("codes") and logged_in == ("true"):
@@ -65,5 +65,10 @@ elif sb == ("spy crafts") and logged_in == ("true"):
   st.markdown("https://sites.google.com/view/poafdsgjoaj/spy-crafts?authuser=0")
 elif sb == ("spy dictionary") or sb == ("sd") and logged_in == ("true"):
   st.markdown("https://sites.google.com/view/poafdsgjoaj/spy-dictionary")
-elif sb == ("lesson one") or ("lesson 1") and logged_in == ("true"):
-  st.markdown("yo")
+elif sb == ("lesson one") and logged_in == ("true"):
+  st.markdown("https://sites.google.com/view/codex-beginner-academie/home")
+elif sb == (" ") or (""):
+  st.markdown("type here to search")
+  sb = ("type here")
+else:
+  st.markdown("")
