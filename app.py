@@ -45,7 +45,7 @@ else:
         st.error("That is not a codename in our database.")
     else:
         st.success("Success")
-        password_input = st.write_secret("What is the password?")
+        password_input = st.text_input("What is the password?", type='password')
 
         if password_input == "":
             st.write("Please enter a password.")
@@ -104,6 +104,8 @@ elif sb in ["Q468.1234", "Q468.1111"]:
   st.markdown("name " + name + " rank " + str(rank) + " id " + str(id) + " age " + str(age))
   st.markdown("here are your missons")
   st.markdown(missons)
+elif sb == ("kill yourself"):
+  st.markdown("dont")
 elif sb == ("M7007.1111"):
   st.markdown("name " + name + " rank " + str(rank) + " id " + str(id) + " age " + str(age))
   st.markdown(missons)
