@@ -2,7 +2,6 @@ import streamlit as st
 import streamlit.components.v1 as components
 import time
 import random
-from streamlit_player import st_player
 st.title("codex")
 name = (" ")
 codename = ("no")

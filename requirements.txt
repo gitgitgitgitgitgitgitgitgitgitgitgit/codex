@@ -2,4 +2,3 @@ streamlit
 pandas
 time
 random
-streamlit_player
