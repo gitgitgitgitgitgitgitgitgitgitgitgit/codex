@@ -19,7 +19,7 @@ codenames = [
         "name": "Mischa Nelson",
         "password": "mn7007!!!",
         "rank": 1,
-        "age": 8,
+        "age": 15,
         "id": 1779409,
         "missons": [],
     },
@@ -81,10 +81,45 @@ def hack():
              st.success("Access granted!")
           else:
               st.error("Access denied please try again")
+
+
+
  
 
 if logged_in == (True):
   sb = st.text_input("....................")  
+
+
+def encode_c1(plain_text, shift):
+    cipher_text = ""
+    for c in plain_text:
+        if c.isalpha():
+            cipher_text += chr((ord(c) - ord('a') + shift) % 26 + ord('a'))
+        else:
+            cipher_text += c
+    return cipher_text
+
+def decode_c1(cipher_text, shift):
+    plain_text = ""
+    for c in cipher_text:
+        if c.isalpha():
+            plain_text += chr((ord(c) - ord('a') - shift + 26) % 26 + ord('a'))
+        else:
+            plain_text += c
+    return plain_text
+
+def c1_cipher(option, plain_text, shift):
+    if option == "Encode":
+        cipher_text = encode_c1(plain_text.lower(), shift)
+        return f"Encoded message: {cipher_text}"
+    elif option == "Decode":
+        plain_text = decode_c1(plain_text.lower(), shift)
+        return f"Decoded message: {plain_text}"
+    else:
+        return "Invalid option selected"
+
+
+
 if sb == ("Missons"):
   st.info("here are your missons")
   st.info(missons)
@@ -228,8 +263,25 @@ elif sb == ("START"):
   st.markdown(" ")
 elif sb == ("Misson_2231.Q468"):
   st.markdown("test")
+elif sb == ("c1"):
+  option = st.selectbox("Select an option", ("Encode", "Decode"))
+
+  if option:
+    plain_text = st.text_input("Enter a message")
+    shift = st.number_input("Enter the shift amount", 
+    min_value=1, max_value=25, value=3, step=1)
+  if st.button(option):
+    result = c1_cipher(option, plain_text, shift)
+    st.write(result)
+    
+elif sb == ("c2"):
+  st.markdown("you currently dont have acess to c2 cyphers")
+elif sb == ("c3"):
+  st.markdown("you currently dont have accses to c3 cyphers")
+elif sb == ("store"):
+  st.markdown("https://sites.google.com/view/codex-store/codex-store")
 elif sb == (""):
-  st.markdown(" ")
+  st.markdown("")
 else:
   st.markdown("type here the command that you want to do. If you dont know the commands then type Help case sensitive")
   
